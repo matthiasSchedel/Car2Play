@@ -5,7 +5,7 @@ cp files/source.list /etc/apt/source.list
 apt-get update
 apt-get -y dist-upgrade
 
-apt-get install dnsmasq hostapd
+apt-get -y install dnsmasq hostapd
 
 systemctl stop dnsmasq
 systemctl stop hostapd
