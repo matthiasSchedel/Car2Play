@@ -3,6 +3,8 @@ from AlphaBot2 import AlphaBot2
 from flask import request
 app = Flask(__name__)
 
+Ab = AlphaBot2()
+
 @app.route("/forward/")
 def forward():
 	return "forward!"
