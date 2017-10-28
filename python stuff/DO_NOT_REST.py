@@ -18,12 +18,12 @@ def stop():
 	Ab.stop()
 
 @app.route("/left/")
-def stop():
+def left():
     return "left!"
     Ab.left()
 
 @app.route("/right/")
-def stop():
+def right():
     return "right!"
     Ab.right()
 
