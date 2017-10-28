@@ -14,6 +14,7 @@ cp files/dhcpcd.conf /etc/dhcpcd.conf
 cp files/interfaces /etc/network/interfaces
 
 service dhcpcd restart
+sleep 90 | ifdown wlan0 && ifup wlan0
 ifdown wlan0
 ifup wlan0
 
