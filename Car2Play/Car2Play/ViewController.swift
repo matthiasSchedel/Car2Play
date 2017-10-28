@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ViewController: UIViewController {
     
     let ipAddress = "http://192.168.0.1:5000/"
+    let motionManager = CMMotionManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        motionManager.accelerometerUpdateInterval = 0.05
+        motionManager.startAccelerometerUpdates()
+        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (accelerometerData, error) in
+            var leftWheelSpeed = 0
+            var rightWheelSpeed = 0
+            if ((accelerometerData?.acceleration.y)! > 0) {
+                // wants to drive to the right side
+                leftWheelSpeed = 100
+                rightWheelSpeed = Int(100 - ((accelerometerData?.acceleration.y)! * 100))
+            } else {
+                // wants to drive to the left side
+                rightWheelSpeed = 100
+                leftWheelSpeed = Int(100 - (-(accelerometerData?.acceleration.y)! * 100))
+            }
+            
+            let json = [ "leftWheel": leftWheelSpeed,
+                         "rightWheel": rightWheelSpeed ]
+            
+            self.getURL(url: URL(string: "\(self.ipAddress)setWheelSpeed")!, json: json)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,12 +64,22 @@ class ViewController: UIViewController {
     }
     
     func executeDrivingCommand(command: String) {
-        getURL(url: URL(string: "\(ipAddress)\(command)")!)
+        getURL(url: URL(string: "\(ipAddress)\(command)")!, json: nil)
     }
     
-    func getURL(url: URL) {
-        let urlSesstion = URLSession(configuration: .default)
-        urlSesstion.dataTask(with: url).resume()
+    func getURL(url: URL, json: Dictionary<String, Any>?) {
+        let session = URLSession(configuration: .default)
+        var request = URLRequest(url:url)
+        request.httpBody = try! JSONSerialization.data(withJSONObject: json!, options: .prettyPrinted)
+        
+        let task = session.dataTask(with: request) {
+            (data, response, error) in
+            if error == nil {
+                //JSONSerialization
+            }
+        }
+        task.resume()
+    
     }
 }
 
