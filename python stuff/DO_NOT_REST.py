@@ -7,7 +7,6 @@ def forward():
 	return "forward!"
 	Ab.forward()
 
-
 @app.route("/backward/")
 def backward():
 	return "backward!"
@@ -17,6 +16,16 @@ def backward():
 def stop():
 	return "stop!"
 	Ab.stop()
+
+@app.route("/left/")
+def stop():
+    return "left!"
+    Ab.left()
+
+@app.route("/right/")
+def stop():
+    return "right!"
+    Ab.right()
 
 @app.route("/camera/")
 def camera():
