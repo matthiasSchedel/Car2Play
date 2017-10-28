@@ -39,3 +39,13 @@ def setWheelSpeed():
 @app.route("/camera/")
 def camera():
     return send_file("/dev/video0", mimetype='image/png')
+
+@app.route("/cameraLeft/")
+def cameraLeft():
+    return "camera left!"
+
+
+@app.route("/cameraRight/")
+def cameraRight():
+    return "camera right"
+
