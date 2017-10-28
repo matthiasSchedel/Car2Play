@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="de.kinemic.example.gesturereceiver.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/meta_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/metadata"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/meta_stream_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Streamer:"
+            android:layout_below="@id/meta_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginBottom="2dp"/>
+        <TextView
+            android:id="@+id/meta_stream_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:layout_alignBaseline="@id/meta_stream_label"
+            android:layout_alignParentRight="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <TextView
+            android:id="@+id/meta_sensor_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor:"
+            android:layout_below="@id/meta_stream_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginBottom="2dp"/>
+        <TextView
+            android:id="@+id/meta_sensor_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:layout_alignBaseline="@id/meta_sensor_label"
+            android:layout_alignParentRight="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+        
+
+        <TextView
+            android:id="@+id/meta_active_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Streaming:"
+            android:layout_below="@id/meta_sensor_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginBottom="2dp"/>
+        <TextView
+            android:id="@+id/meta_active_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:layout_alignBaseline="@id/meta_active_label"
+            android:layout_alignParentRight="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <TextView
+            android:id="@+id/meta_last_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seconds since last message:"
+            android:layout_below="@id/meta_active_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginBottom="2dp"/>
+        <TextView
+            android:id="@+id/meta_last_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:layout_alignBaseline="@id/meta_last_label"
+            android:layout_alignParentRight="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <TextView
+            android:id="@+id/event_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Event:"
+            android:layout_below="@id/meta_last_label"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/event_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:layout_below="@id/event_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Do 'Rotate RL' to enter drawing Activity"/>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

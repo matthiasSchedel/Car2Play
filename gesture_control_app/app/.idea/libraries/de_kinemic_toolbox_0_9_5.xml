@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="de.kinemic:toolbox-0.9.5">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/toolbox-0.9.5.aar/24f526eb7145a39d83528cbb4fb0503b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/toolbox-0.9.5.aar/24f526eb7145a39d83528cbb4fb0503b/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.kinemic/toolbox/0.9.5/8d1591f4b70ea4b012437a8ab90eb35a1af899e3/toolbox-0.9.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
