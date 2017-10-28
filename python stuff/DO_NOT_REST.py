@@ -17,3 +17,7 @@ def backward():
 def stop():
 	return "stop!"
 	Ab.stop()
+
+@app.route("/camera/")
+def camera():
+    return send_file("/dev/video0", mimetype='image/png')
