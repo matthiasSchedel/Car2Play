@@ -14,6 +14,7 @@
 		5127820F1FA4A73200B3AA18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5127820D1FA4A73200B3AA18 /* LaunchScreen.storyboard */; };
 		5127821A1FA4A73200B3AA18 /* Car2PlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512782191FA4A73200B3AA18 /* Car2PlayTests.swift */; };
 		512782251FA4A73200B3AA18 /* Car2PlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512782241FA4A73200B3AA18 /* Car2PlayUITests.swift */; };
+		B32CD1DF1FA4D6FE009C01A3 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CD1DE1FA4D6FE009C01A3 /* CameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		512782201FA4A73200B3AA18 /* Car2PlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Car2PlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		512782241FA4A73200B3AA18 /* Car2PlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car2PlayUITests.swift; sourceTree = "<group>"; };
 		512782261FA4A73200B3AA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B32CD1DE1FA4D6FE009C01A3 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				512782041FA4A73200B3AA18 /* AppDelegate.swift */,
 				512782061FA4A73200B3AA18 /* ViewController.swift */,
+				B32CD1DE1FA4D6FE009C01A3 /* CameraController.swift */,
 				512782081FA4A73200B3AA18 /* Main.storyboard */,
 				5127820B1FA4A73200B3AA18 /* Assets.xcassets */,
 				5127820D1FA4A73200B3AA18 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32CD1DF1FA4D6FE009C01A3 /* CameraController.swift in Sources */,
 				512782071FA4A73200B3AA18 /* ViewController.swift in Sources */,
 				512782051FA4A73200B3AA18 /* AppDelegate.swift in Sources */,
 			);
