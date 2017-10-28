@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		512782051FA4A73200B3AA18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512782041FA4A73200B3AA18 /* AppDelegate.swift */; };
+		512782071FA4A73200B3AA18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512782061FA4A73200B3AA18 /* ViewController.swift */; };
+		5127820A1FA4A73200B3AA18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 512782081FA4A73200B3AA18 /* Main.storyboard */; };
+		5127820C1FA4A73200B3AA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5127820B1FA4A73200B3AA18 /* Assets.xcassets */; };
+		5127820F1FA4A73200B3AA18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5127820D1FA4A73200B3AA18 /* LaunchScreen.storyboard */; };
+		5127821A1FA4A73200B3AA18 /* Car2PlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512782191FA4A73200B3AA18 /* Car2PlayTests.swift */; };
+		512782251FA4A73200B3AA18 /* Car2PlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512782241FA4A73200B3AA18 /* Car2PlayUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		512782161FA4A73200B3AA18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 512781F91FA4A73200B3AA18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 512782001FA4A73200B3AA18;
+			remoteInfo = Car2Play;
+		};
+		512782211FA4A73200B3AA18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 512781F91FA4A73200B3AA18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 512782001FA4A73200B3AA18;
+			remoteInfo = Car2Play;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		512782011FA4A73200B3AA18 /* Car2Play.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car2Play.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		512782041FA4A73200B3AA18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		512782061FA4A73200B3AA18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		512782091FA4A73200B3AA18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5127820B1FA4A73200B3AA18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5127820E1FA4A73200B3AA18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		512782101FA4A73200B3AA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		512782151FA4A73200B3AA18 /* Car2PlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Car2PlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		512782191FA4A73200B3AA18 /* Car2PlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car2PlayTests.swift; sourceTree = "<group>"; };
+		5127821B1FA4A73200B3AA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		512782201FA4A73200B3AA18 /* Car2PlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Car2PlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		512782241FA4A73200B3AA18 /* Car2PlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car2PlayUITests.swift; sourceTree = "<group>"; };
+		512782261FA4A73200B3AA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		512781FE1FA4A73200B3AA18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		512782121FA4A73200B3AA18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5127821D1FA4A73200B3AA18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		512781F81FA4A73200B3AA18 = {
+			isa = PBXGroup;
+			children = (
+				512782031FA4A73200B3AA18 /* Car2Play */,
+				512782181FA4A73200B3AA18 /* Car2PlayTests */,
+				512782231FA4A73200B3AA18 /* Car2PlayUITests */,
+				512782021FA4A73200B3AA18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		512782021FA4A73200B3AA18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				512782011FA4A73200B3AA18 /* Car2Play.app */,
+				512782151FA4A73200B3AA18 /* Car2PlayTests.xctest */,
+				512782201FA4A73200B3AA18 /* Car2PlayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		512782031FA4A73200B3AA18 /* Car2Play */ = {
+			isa = PBXGroup;
+			children = (
+				512782041FA4A73200B3AA18 /* AppDelegate.swift */,
+				512782061FA4A73200B3AA18 /* ViewController.swift */,
+				512782081FA4A73200B3AA18 /* Main.storyboard */,
+				5127820B1FA4A73200B3AA18 /* Assets.xcassets */,
+				5127820D1FA4A73200B3AA18 /* LaunchScreen.storyboard */,
+				512782101FA4A73200B3AA18 /* Info.plist */,
+			);
+			path = Car2Play;
+			sourceTree = "<group>";
+		};
+		512782181FA4A73200B3AA18 /* Car2PlayTests */ = {
+			isa = PBXGroup;
+			children = (
+				512782191FA4A73200B3AA18 /* Car2PlayTests.swift */,
+				5127821B1FA4A73200B3AA18 /* Info.plist */,
+			);
+			path = Car2PlayTests;
+			sourceTree = "<group>";
+		};
+		512782231FA4A73200B3AA18 /* Car2PlayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				512782241FA4A73200B3AA18 /* Car2PlayUITests.swift */,
+				512782261FA4A73200B3AA18 /* Info.plist */,
+			);
+			path = Car2PlayUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		512782001FA4A73200B3AA18 /* Car2Play */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 512782291FA4A73200B3AA18 /* Build configuration list for PBXNativeTarget "Car2Play" */;
+			buildPhases = (
+				512781FD1FA4A73200B3AA18 /* Sources */,
+				512781FE1FA4A73200B3AA18 /* Frameworks */,
+				512781FF1FA4A73200B3AA18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Car2Play;
+			productName = Car2Play;
+			productReference = 512782011FA4A73200B3AA18 /* Car2Play.app */;
+			productType = "com.apple.product-type.application";
+		};
+		512782141FA4A73200B3AA18 /* Car2PlayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5127822C1FA4A73200B3AA18 /* Build configuration list for PBXNativeTarget "Car2PlayTests" */;
+			buildPhases = (
+				512782111FA4A73200B3AA18 /* Sources */,
+				512782121FA4A73200B3AA18 /* Frameworks */,
+				512782131FA4A73200B3AA18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				512782171FA4A73200B3AA18 /* PBXTargetDependency */,
+			);
+			name = Car2PlayTests;
+			productName = Car2PlayTests;
+			productReference = 512782151FA4A73200B3AA18 /* Car2PlayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5127821F1FA4A73200B3AA18 /* Car2PlayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5127822F1FA4A73200B3AA18 /* Build configuration list for PBXNativeTarget "Car2PlayUITests" */;
+			buildPhases = (
+				5127821C1FA4A73200B3AA18 /* Sources */,
+				5127821D1FA4A73200B3AA18 /* Frameworks */,
+				5127821E1FA4A73200B3AA18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				512782221FA4A73200B3AA18 /* PBXTargetDependency */,
+			);
+			name = Car2PlayUITests;
+			productName = Car2PlayUITests;
+			productReference = 512782201FA4A73200B3AA18 /* Car2PlayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		512781F91FA4A73200B3AA18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Frederik Riedel";
+				TargetAttributes = {
+					512782001FA4A73200B3AA18 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					512782141FA4A73200B3AA18 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 512782001FA4A73200B3AA18;
+					};
+					5127821F1FA4A73200B3AA18 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 512782001FA4A73200B3AA18;
+					};
+				};
+			};
+			buildConfigurationList = 512781FC1FA4A73200B3AA18 /* Build configuration list for PBXProject "Car2Play" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 512781F81FA4A73200B3AA18;
+			productRefGroup = 512782021FA4A73200B3AA18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				512782001FA4A73200B3AA18 /* Car2Play */,
+				512782141FA4A73200B3AA18 /* Car2PlayTests */,
+				5127821F1FA4A73200B3AA18 /* Car2PlayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		512781FF1FA4A73200B3AA18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5127820F1FA4A73200B3AA18 /* LaunchScreen.storyboard in Resources */,
+				5127820C1FA4A73200B3AA18 /* Assets.xcassets in Resources */,
+				5127820A1FA4A73200B3AA18 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		512782131FA4A73200B3AA18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5127821E1FA4A73200B3AA18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		512781FD1FA4A73200B3AA18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				512782071FA4A73200B3AA18 /* ViewController.swift in Sources */,
+				512782051FA4A73200B3AA18 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		512782111FA4A73200B3AA18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5127821A1FA4A73200B3AA18 /* Car2PlayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5127821C1FA4A73200B3AA18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				512782251FA4A73200B3AA18 /* Car2PlayUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		512782171FA4A73200B3AA18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 512782001FA4A73200B3AA18 /* Car2Play */;
+			targetProxy = 512782161FA4A73200B3AA18 /* PBXContainerItemProxy */;
+		};
+		512782221FA4A73200B3AA18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 512782001FA4A73200B3AA18 /* Car2Play */;
+			targetProxy = 512782211FA4A73200B3AA18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		512782081FA4A73200B3AA18 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				512782091FA4A73200B3AA18 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5127820D1FA4A73200B3AA18 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5127820E1FA4A73200B3AA18 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		512782271FA4A73200B3AA18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		512782281FA4A73200B3AA18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5127822A1FA4A73200B3AA18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				INFOPLIST_FILE = Car2Play/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.Car2Play;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5127822B1FA4A73200B3AA18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				INFOPLIST_FILE = Car2Play/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.Car2Play;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5127822D1FA4A73200B3AA18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				INFOPLIST_FILE = Car2PlayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.Car2PlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Car2Play.app/Car2Play";
+			};
+			name = Debug;
+		};
+		5127822E1FA4A73200B3AA18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				INFOPLIST_FILE = Car2PlayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.Car2PlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Car2Play.app/Car2Play";
+			};
+			name = Release;
+		};
+		512782301FA4A73200B3AA18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				INFOPLIST_FILE = Car2PlayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.Car2PlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Car2Play;
+			};
+			name = Debug;
+		};
+		512782311FA4A73200B3AA18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				INFOPLIST_FILE = Car2PlayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.Car2PlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Car2Play;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		512781FC1FA4A73200B3AA18 /* Build configuration list for PBXProject "Car2Play" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				512782271FA4A73200B3AA18 /* Debug */,
+				512782281FA4A73200B3AA18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		512782291FA4A73200B3AA18 /* Build configuration list for PBXNativeTarget "Car2Play" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5127822A1FA4A73200B3AA18 /* Debug */,
+				5127822B1FA4A73200B3AA18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5127822C1FA4A73200B3AA18 /* Build configuration list for PBXNativeTarget "Car2PlayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5127822D1FA4A73200B3AA18 /* Debug */,
+				5127822E1FA4A73200B3AA18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5127822F1FA4A73200B3AA18 /* Build configuration list for PBXNativeTarget "Car2PlayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				512782301FA4A73200B3AA18 /* Debug */,
+				512782311FA4A73200B3AA18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 512781F91FA4A73200B3AA18 /* Project object */;
+}
