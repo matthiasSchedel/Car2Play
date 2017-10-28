@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # upgrade raspi
-cp files/source.list /etc/apt/source.list
+cp files/sources.list /etc/apt/sources.list
 apt-get update
 apt-get -y dist-upgrade
 
