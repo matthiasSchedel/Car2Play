@@ -23,23 +23,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func stop(_ sender: Any) {
-        getURL(url: URL(string: "\(ipAddress)stop")!)
+        executeDrivingCommand(command: "stop")
     }
     
     @IBAction func moveForward(_ sender: Any) {
-        getURL(url: URL(string: "\(ipAddress)forward")!)
+        executeDrivingCommand(command: "forward")
     }
     
     @IBAction func moveRight(_ sender: Any) {
-        getURL(url: URL(string: "\(ipAddress)right")!)
+        executeDrivingCommand(command: "right")
     }
     
     @IBAction func moveBackwards(_ sender: Any) {
-        getURL(url: URL(string: "\(ipAddress)backward")!)
+        executeDrivingCommand(command: "backward")
     }
     
     @IBAction func moveLeft(_ sender: Any) {
-        getURL(url: URL(string: "\(ipAddress)left")!)
+        executeDrivingCommand(command: "left")
+    }
+    
+    func executeDrivingCommand(command: String) {
+        getURL(url: URL(string: "\(ipAddress)\(command)")!)
     }
     
     func getURL(url: URL) {
