@@ -1,5 +1,6 @@
 from flask import Flask
 from AlphaBot2 import AlphaBot2
+from flask import request
 app = Flask(__name__)
 
 @app.route("/forward/")
@@ -26,6 +27,12 @@ def left():
 def right():
     Ab.right()
     return "right!"
+
+@app.route("/setWheelSpeed/")
+def setWheelSpeed():
+    left = request.args.get('leftWheelSpeed')
+    right = request.args.get('rightWheelSpeed')
+    Ab.setMotor(left,right)
 
 @app.route("/camera/")
 def camera():
