@@ -19,13 +19,13 @@ def stop():
 
 @app.route("/left/")
 def left():
-    return "left!"
     Ab.left()
+    return "left!"
 
 @app.route("/right/")
 def right():
-    return "right!"
     Ab.right()
+    return "right!"
 
 @app.route("/camera/")
 def camera():
