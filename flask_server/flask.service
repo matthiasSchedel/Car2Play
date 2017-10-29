@@ -1,0 +1,13 @@
+[Unit]
+Description=My Flask server
+After=network.target
+
+[Service]
+User=root
+ExecStart=/usr/bin/python2 /home/pi/flask_server/flask_server.py
+WorkingDirectory=/home/pi/flask_server/
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target 
