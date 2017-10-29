@@ -30,7 +30,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
             if ((accelerometerData?.acceleration.y)! > 0) {
                 // wants to drive to the right side
                 leftWheelSpeed = Int(speed)
-                rightWheelSpeed = Int((1 + (accelerometerData?.acceleration.y)!) * speed)
+                rightWheelSpeed = Int((1 - (accelerometerData?.acceleration.y)!) * speed)
             } else {
                 // wants to drive to the left side
                 rightWheelSpeed = Int(speed)
