@@ -43,42 +43,47 @@ def right():
 
 
 @app.route("/servo/leftright/")
-def servoLeftRight():
-    position = int(request.args.get("position"))
-    speed = int(request.args.get("speed"))
-    current = cache.get("leftright")
-    if (current is None):
-        current = 2450
-    s.turnLeftRight(current, position, speed)
-    cache.set("leftright", position)
-    return "servoleftrigth!"
-
+def servo_leftright():
+    handle_request(request, 0)
+    return "servoleftright!"
 
 @app.route("/servo/updown/")
-def servoUpDown():
-    position = int(request.args.get("position"))
-    speed = int(request.args.get("speed"))
-    current = cache.get("updown")
-    if (current is None):
-        current = 3000
-    s.turnUpDown(current, position, speed)
-    cache.set("updown", position)
+def servo_updown():
+    handle_request(request, 1)
     return "servoupdown!"
 
 
+def handle_request(request, mode_id):
+    position = int(request.args.get("position"))
+    speed = int(request.args.get("speed"))
+    defaults = s.leftright_range
+    key = "leftright"
+    if (mode_id == 1):
+        key = "updown"
+        defaults = s.updown_range
+
+    current = cache.get(key)
+    if (current is None): current = defaults[1]
+    result = s.run_servo(current, position, speed, mode_id, defaults)
+    cache.set(key, result)
+
 @app.route("/servo/center/")
 def servoCenter():
-    currentUpDown = cache.get("updown")
-    currentLeftRight = current = cache.get("leftright")
-    if (currentLeftRight is None):
-        currentLeftRight = 2450
-    if (currentUpDown is None):
-        currentUpDown = 2450
-    s.center(currentLeftRight, currentUpDown)
+    current_updown = cache.get("updown")
+    current_left_right  = cache.get("leftright")
+    if (current_left_right is None): current_left_right = s.leftright_range[0]
+    if (current_updown is None): current_updown = s.leftright_range[1]
+    s.center(current_left_right, current_updown)
     cache.set("leftright", 1500)
     cache.set("updown", 2600)
     return "servoupdown!"
 
+
+@app.route("/setWheelSpeed/")
+def setWheelSpeed():
+    left = request.args.get('leftWheelSpeed')
+    right = request.args.get('rightWheelSpeed')
+    Ab.setMotor(left, right)
 
 @app.route("/setWheelSpeed/", methods=["POST"])
 def setWheelSpeed():
