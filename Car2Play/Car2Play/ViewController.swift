@@ -20,7 +20,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         motionManager.accelerometerUpdateInterval = 0.5
-
+        
         motionManager.startAccelerometerUpdates()
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (accelerometerData, error) in
             var leftWheelSpeed = 0
@@ -40,23 +40,32 @@ class ViewController: UIViewController, WKNavigationDelegate {
                          "rightWheelSpeed": rightWheelSpeed ]
             print(json)
             if (self.shouldDrive) {
-                self.getURL(url: URL(string: "\(self.ipAddress)setWheelSpeed/")!, json: json)
+                self.getURL(url: URL(string: "\(self.ipAddress)setWheelSpeed/")!, json: json, method: "POST")
             }
-
+            
         }
         
         self.webView.navigationDelegate = self
         self.webView.isUserInteractionEnabled = false
         self.webView.load(URLRequest(url: URL(string: "http://10.200.79.4:8880/html/")!))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func stop(_ sender: Any) {
+        self.stop()
+    }
+    
+    func stop(count: Int = 0) {
         executeDrivingCommand(command: "stop")
+        if count < 3 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                self.stop(count: count + 1)
+            }
+        }
     }
     
     @IBAction func moveForward(_ sender: Any) {
@@ -74,29 +83,30 @@ class ViewController: UIViewController, WKNavigationDelegate {
     @IBAction func moveLeft(_ sender: Any) {
         executeDrivingCommand(command: "left")
     }
-     
+    
     func executeDrivingCommand(command: String) {
-        getURL(url: URL(string: "\(ipAddress)\(command)")!, json: nil)
+        getURL(url: URL(string: "\(ipAddress)\(command)/")!, json: nil)
     }
     
-    func getURL(url: URL, json: Dictionary<String, Any>?) {
+    func getURL(url: URL, json: Dictionary<String, Any>?, method: String = "GET") {
         let session = URLSession(configuration: .default)
         var request = URLRequest(url:url)
-
-        request.httpMethod = "POST"
+        
+        request.httpMethod = method
         if let json = json {
             request.httpBody = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
-
+        
         let task = session.dataTask(with: request) {
             (data, response, error) in
+            print(error, url)
             if error == nil {
                 //JSONSerialization
             }
         }
         task.resume()
-    
+        
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -107,7 +117,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         shouldDrive = true
     }
     
- 
+    
     @IBAction func stopCar(_ sender: Any) {
         shouldDrive = false
         executeDrivingCommand(command: "stop")
