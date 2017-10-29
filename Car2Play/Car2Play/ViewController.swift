@@ -8,15 +8,18 @@
 
 import UIKit
 import CoreMotion
+import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKNavigationDelegate {
     
     let ipAddress = "http://192.168.0.1:5000/"
     let motionManager = CMMotionManager()
-
+    @IBOutlet weak var webView: WKWebView!
+    var shouldDrive = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        motionManager.accelerometerUpdateInterval = 0.05
+        motionManager.accelerometerUpdateInterval = 0.2
         motionManager.startAccelerometerUpdates()
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (accelerometerData, error) in
             var leftWheelSpeed = 0
@@ -34,8 +37,14 @@ class ViewController: UIViewController {
             let json = [ "leftWheel": leftWheelSpeed,
                          "rightWheel": rightWheelSpeed ]
             
-            self.getURL(url: URL(string: "\(self.ipAddress)setWheelSpeed")!, json: json)
+            if (self.shouldDrive) {
+                self.getURL(url: URL(string: "\(self.ipAddress)setWheelSpeed")!, json: json)
+            }
         }
+        
+        self.webView.navigationDelegate = self
+        self.webView.isUserInteractionEnabled = false
+        self.webView.load(URLRequest(url: URL(string: "http://10.200.79.4:8880/html/")!))
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,7 +79,10 @@ class ViewController: UIViewController {
     func getURL(url: URL, json: Dictionary<String, Any>?) {
         let session = URLSession(configuration: .default)
         var request = URLRequest(url:url)
-        request.httpBody = try! JSONSerialization.data(withJSONObject: json!, options: .prettyPrinted)
+        
+        if ((json) != nil) {
+            request.httpBody = try! JSONSerialization.data(withJSONObject: json!, options: .prettyPrinted)
+        }
         
         let task = session.dataTask(with: request) {
             (data, response, error) in
@@ -81,5 +93,20 @@ class ViewController: UIViewController {
         task.resume()
     
     }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("toggle_fullscreen(document.getElementById(\"mjpeg_dest\"));", completionHandler: nil)
+    }
+    
+    @IBAction func accelerate(_ sender: Any) {
+        shouldDrive = true
+    }
+    
+ 
+    @IBAction func stopCar(_ sender: Any) {
+        shouldDrive = false
+        executeDrivingCommand(command: "stop")
+    }
+    
 }
 
