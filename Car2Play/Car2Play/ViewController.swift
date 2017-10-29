@@ -23,21 +23,23 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         motionManager.startAccelerometerUpdates()
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (accelerometerData, error) in
+            print(accelerometerData!.acceleration.x, accelerometerData!.acceleration.y, accelerometerData!.acceleration.z)
             var leftWheelSpeed = 0
             var rightWheelSpeed = 0
+            let speed = accelerometerData!.acceleration.z * -100
             if ((accelerometerData?.acceleration.y)! > 0) {
                 // wants to drive to the right side
-                leftWheelSpeed = 100
-                rightWheelSpeed = Int(100 - ((accelerometerData?.acceleration.y)! * 100))
+                leftWheelSpeed = Int(speed)
+                rightWheelSpeed = Int((1 + (accelerometerData?.acceleration.y)!) * speed)
             } else {
                 // wants to drive to the left side
-                rightWheelSpeed = 100
-                leftWheelSpeed = Int(100 - (-(accelerometerData?.acceleration.y)! * 100))
+                rightWheelSpeed = Int(speed)
+                leftWheelSpeed = Int((1 + (accelerometerData?.acceleration.y)!) * speed)
             }
             
             
-            let json = [ "leftWheelSpeed": leftWheelSpeed,
-                         "rightWheelSpeed": rightWheelSpeed ]
+            let json = [ "leftWheelSpeed": max(min(leftWheelSpeed, 100), -100),
+                         "rightWheelSpeed": max(min(rightWheelSpeed, 100), -100) ]
             print(json)
             if (self.shouldDrive) {
                 self.getURL(url: URL(string: "\(self.ipAddress)setWheelSpeed/")!, json: json, method: "POST")
@@ -47,7 +49,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         self.webView.navigationDelegate = self
         self.webView.isUserInteractionEnabled = false
-        self.webView.load(URLRequest(url: URL(string: "http://10.200.79.4:8880/html/")!))
+        self.webView.load(URLRequest(url: URL(string: "http://192.168.0.1:8080/cam/")!))
+        self.view.sendSubview(toBack: self.webView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,29 +62,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
         self.stop()
     }
     
-    func stop(count: Int = 0) {
+    func stop() {
         executeDrivingCommand(command: "stop")
-        if count < 3 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                self.stop(count: count + 1)
-            }
-        }
-    }
-    
-    @IBAction func moveForward(_ sender: Any) {
-        executeDrivingCommand(command: " ")
-    }
-    
-    @IBAction func moveRight(_ sender: Any) {
-        executeDrivingCommand(command: "right")
-    }
-    
-    @IBAction func moveBackwards(_ sender: Any) {
-        executeDrivingCommand(command: "backward")
-    }
-    
-    @IBAction func moveLeft(_ sender: Any) {
-        executeDrivingCommand(command: "left")
     }
     
     func executeDrivingCommand(command: String) {

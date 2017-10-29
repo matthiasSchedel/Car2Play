@@ -47,6 +47,7 @@ def servo_leftright():
     handle_request(request, 0)
     return "servoleftright!"
 
+
 @app.route("/servo/updown/")
 def servo_updown():
     handle_request(request, 1)
@@ -63,16 +64,20 @@ def handle_request(request, mode_id):
         defaults = s.updown_range
 
     current = cache.get(key)
-    if (current is None): current = defaults[1]
+    if (current is None):
+        current = defaults[1]
     result = s.run_servo(current, position, speed, mode_id, defaults)
     cache.set(key, result)
+
 
 @app.route("/servo/center/")
 def servoCenter():
     current_updown = cache.get("updown")
-    current_left_right  = cache.get("leftright")
-    if (current_left_right is None): current_left_right = s.leftright_range[0]
-    if (current_updown is None): current_updown = s.leftright_range[1]
+    current_left_right = cache.get("leftright")
+    if (current_left_right is None):
+        current_left_right = s.leftright_range[0]
+    if (current_updown is None):
+        current_updown = s.leftright_range[1]
     s.center(current_left_right, current_updown)
     cache.set("leftright", 1500)
     cache.set("updown", 2600)
@@ -85,7 +90,30 @@ def setWheelSpeed():
     right = float(request.get_json()['rightWheelSpeed'])
     maximum = float(50)
     # Ab.setMotor(left, right)
-    Ab.forward()
+    if (left < 0 and right < 0):
+        left = -left
+        right = -right
+        Ab.backward()
+    else:
+        Ab.forward()
+    print((maximum * (left / 100)))
+    Ab.setPWMA(maximum * (left / 100))
+    Ab.setPWMB(maximum * (right / 100))
+    return "servoupdown!"
+
+
+@app.route("/setWheelSpeedArg/")
+def setWheelSpeedArg():
+    left = float(request.args.get('leftWheelSpeed'))
+    right = float(request.args.get('rightWheelSpeed'))
+    maximum = float(50)
+    # Ab.setMotor(left, right)
+    if (left < 0 and right < 0):
+        left = -left
+        right = -right
+        Ab.backward()
+    else:
+        Ab.forward()
     print((maximum * (left / 100)))
     Ab.setPWMA(maximum * (left / 100))
     Ab.setPWMB(maximum * (right / 100))
