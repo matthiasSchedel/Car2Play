@@ -19,7 +19,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        motionManager.accelerometerUpdateInterval = 0.2
+        motionManager.accelerometerUpdateInterval = 0.5
+
         motionManager.startAccelerometerUpdates()
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (accelerometerData, error) in
             var leftWheelSpeed = 0
@@ -34,12 +35,14 @@ class ViewController: UIViewController, WKNavigationDelegate {
                 leftWheelSpeed = Int(100 - (-(accelerometerData?.acceleration.y)! * 100))
             }
             
-            let json = [ "leftWheel": leftWheelSpeed,
-                         "rightWheel": rightWheelSpeed ]
             
+            let json = [ "leftWheelSpeed": leftWheelSpeed,
+                         "rightWheelSpeed": rightWheelSpeed ]
+            print(json)
             if (self.shouldDrive) {
-                self.getURL(url: URL(string: "\(self.ipAddress)setWheelSpeed")!, json: json)
+                self.getURL(url: URL(string: "\(self.ipAddress)setWheelSpeed/")!, json: json)
             }
+
         }
         
         self.webView.navigationDelegate = self
@@ -57,7 +60,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func moveForward(_ sender: Any) {
-        executeDrivingCommand(command: "forward")
+        executeDrivingCommand(command: " ")
     }
     
     @IBAction func moveRight(_ sender: Any) {
@@ -71,7 +74,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     @IBAction func moveLeft(_ sender: Any) {
         executeDrivingCommand(command: "left")
     }
-    
+     
     func executeDrivingCommand(command: String) {
         getURL(url: URL(string: "\(ipAddress)\(command)")!, json: nil)
     }
@@ -79,11 +82,13 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func getURL(url: URL, json: Dictionary<String, Any>?) {
         let session = URLSession(configuration: .default)
         var request = URLRequest(url:url)
-        
-        if ((json) != nil) {
-            request.httpBody = try! JSONSerialization.data(withJSONObject: json!, options: .prettyPrinted)
+
+        request.httpMethod = "POST"
+        if let json = json {
+            request.httpBody = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
-        
+
         let task = session.dataTask(with: request) {
             (data, response, error) in
             if error == nil {
