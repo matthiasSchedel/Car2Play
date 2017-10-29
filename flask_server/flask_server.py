@@ -79,12 +79,6 @@ def servoCenter():
     return "servoupdown!"
 
 
-@app.route("/setWheelSpeed/")
-def setWheelSpeed():
-    left = request.args.get('leftWheelSpeed')
-    right = request.args.get('rightWheelSpeed')
-    Ab.setMotor(left, right)
-
 @app.route("/setWheelSpeed/", methods=["POST"])
 def setWheelSpeed():
     left = float(request.get_json()['leftWheelSpeed'])
